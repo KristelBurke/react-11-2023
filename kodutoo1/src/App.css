@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.nupp{
+  background-color: green;
+  color: lightgray;
+}
+
+.nupp:hover{
+  height: 100px;
+}
+
+.nupp:active {
+  cursor: grab
+}
+
+.sinine-tekst{
+  color: blue;
+  font-style: italic;
+}
+
+.sinine-tekst:hover{
+  font-size: 24px;
+}
+.roheline-tekst{
+  color:green;
+  font-style: bold;
+  border: 1px solid red;
+}
+.roheline-tekst:hover{
+  border: 1px solid brown;
+}
+
+.pilt{
+  width: 150px;
+  height: auto;
+  float: right;
+}
+
+.pilt:hover{
+  border-radius: 10%;
+  opacity: 60%;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
