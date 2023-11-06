@@ -4,7 +4,7 @@
 
 .nupu-stiil{
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .nupu-stiil:hover {
@@ -13,7 +13,7 @@
 }
 
 .nupu-stiil:active {
-  background-color: black;
+  background-color: white;
 }
 
 .pilt{
