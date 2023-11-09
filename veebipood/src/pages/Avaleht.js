@@ -2,6 +2,19 @@ import React, { useState } from 'react'
 
 // div ja span on tühjused, aga div teeb uue rea, span ei tee
 
+// tumesinine - JavaScriptis sissekirjutatud sõnad: function, const, false, true, undefined
+//  Liigitus     HTMLs elementide tagi nimetused: div, img, button, input, label
+// tavaline sinine - muutujad JS + HTMLs. Need on meie poolt välja mõeldud sõnad
+// helesinine - omadus JS + HTMLs. className, src, alt, onClick, disabled
+//              JavaScriptis: .current.value
+// kollane - funktsioonid, JS + HTMLs
+// roheline - kommentaar
+// lilla - käsklus. import, export, return, if / else
+// valge - märgid, HTMLs väljakuvatav tekst
+// oranž - tekst
+// heleroheline - number
+// {{{{{{{{{{{{{{[[[(((())))]]]}}}}}}}}}}}}}}
+
 function Avaleht() {
     const [kogus, uuendaKogus] = useState (7);
     const [laigitud, muudaLaigitud] = useState (false) ; // 0  - mittelaigitud, 1- laigitud
