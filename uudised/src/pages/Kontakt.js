@@ -9,6 +9,10 @@ function Kontakt() {
             <div>Kristiine keskus</div>
             <div>+372123123</div>
             <div>Endla 45, Tallinn</div>
+            <br/>
+            <div>Ulemiste keskus</div>
+            <div>+372123123</div>
+            <div>Suur-Sojamae 4, Tallinn</div>
         </div>
     )
 }
