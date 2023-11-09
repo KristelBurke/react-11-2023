@@ -19,9 +19,9 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="work" element={ <Work />}></Route>
-        <Route path="hobbies" element={ < Hobbies />}></Route>
-        <Route path="courses" element={ < Courses /> }></Route>
+        <Route path="work" element={ <Work />} />
+        <Route path="hobbies" element={ <Hobbies />} />
+        <Route path="courses" element={ <Courses /> } />
       </Routes>
     </div>
   );
