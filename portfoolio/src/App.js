@@ -11,17 +11,19 @@ function App() {
       <div className="rectangle"></div>
 
       <div className="navigation-pictures">
-        <Link className="main-link" to="work"></Link>
+        <Link className="main-link" to="work">
          <img src="https://i.pinimg.com/474x/61/c4/fa/61c4fa3bf3d2467a6d87ebcc6fd1ea13.jpg" alt=""/>
          <p>Toode lehele</p>
+         </Link>
 
-        <Link className="main-link" to="hobbies"></Link>
+        <Link className="main-link" to="hobbies">
           <img src="https://pbs.twimg.com/profile_images/867703104061546498/Fn432rGr_400x400.jpg" alt=""/>
           <p>Hobide lehele</p>
-
-        <Link className="main-link" to="courses"></Link>
+          </Link>
+        <Link className="main-link" to="courses">
           <img src="https://damoclesjournal.files.wordpress.com/2022/02/0x0.jpg" alt=""/>
           <p>Kursuste lehele</p>
+          </Link>
       </div>
 
       <Routes>
