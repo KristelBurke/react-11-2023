@@ -1,9 +1,9 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Hobbies() {
     return (
         <div>
-            <Link to="./">
+            <Link to="/">
                 <button>Tagasi</button>
             </Link>
             <div>Hobide sisu</div>
@@ -11,4 +11,4 @@ function Hobbies() {
     )
 }
 
-export default Hobbies
+export default Hobbies;

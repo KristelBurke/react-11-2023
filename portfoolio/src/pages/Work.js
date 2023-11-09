@@ -1,9 +1,9 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Work() {
     return (
         <div>
-            <Link to="./">
+            <Link to="/">
                 <button>Tagasi</button>
             </Link>
             <div>Toode sisu</div>
@@ -11,4 +11,4 @@ function Work() {
     )
 }
 
-export default Work
+export default Work;
