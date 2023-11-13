@@ -15,9 +15,9 @@ function App() {
 
       <Routes>
         <Route path="" element={< Navigate to="/ilmumine" />} />
-        <Route path="" element={ < Ilmumine />} />
-        <Route path="" element={ < Kujundus />} />
-        <Route path="" element={ < Muutmine />} />
+        <Route path="/ilmumine" element={ < Ilmumine />} />
+        <Route path="/kujundus" element={ < Kujundus />} />
+        <Route path="/muutmine" element={ < Muutmine />} />
       </Routes>
     </div>
   );
