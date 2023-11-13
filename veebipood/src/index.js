@@ -15,6 +15,8 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+  // StrictMode võimaldab kõrvalefekte leida, tehes tagatausta uuesti renderdamine
   <React.StrictMode>
     <BrowserRouter>
       <App />
