@@ -41,3 +41,16 @@
   text-align: center;
   min-height: 100vh;
 }
+
+.ikoon {
+  width: 30px;
+}
+
+.ikoon:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.ikoon:active {
+  box-shadow: 0px 0px 10px 10px; 
+}

@@ -28,8 +28,8 @@ function App() {
 
   return (
     <div className={ kasTume === "true" ? "tume": "App"}>
-      { kasTume === "false" && <img style={{"width": "30px"}} onClick={muudaTumedaks} src="/tume.png" alt=""/>}
-      { kasTume === "true" && <img style={{"width": "30px"}} onClick={muudaHeledaks} src="/hele.png" alt=""/>}
+      { kasTume === "false" && <img className="ikoon" onClick={muudaTumedaks} src="/tume.png" alt=""/>}
+      { kasTume === "true" && <img className="ikoon"  onClick={muudaHeledaks} src="/hele.png" alt=""/>}
       {/* Link to="" suunab sinna URL-le mis on to="" jutumärkide sees */}
       <Link to="/avaleht">
         <img className="pilt" src="https://estonia.ee/wp-content/uploads/nobe_netist_4.jpg" alt=""/>

@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import { useState} from 'react'
 
 function Seaded() {
     const [keel, uuendaKeel] = useState(localStorage.getItem("keel"));

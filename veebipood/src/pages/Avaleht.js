@@ -32,24 +32,26 @@ function Avaleht() {
   // (mis tuleb alati tagasi kui refresh tehakse või lehelt ära minnakse ja tagasi tullakse)
 
 
-    const [kogus, uuendaKogus] = useState (7);
+    const [kogus, uuendaKogus] = useState( Number(localStorage.getItem("kogus")) );
     const [laigitud, muudaLaigitud] = useState (false) ; // 0  - mittelaigitud, 1- laigitud
     const [sonum, uuendaSonum] = useState ("uuenda kogust!");
 
     const nulli = () => {
         uuendaKogus(0);
         uuendaSonum("Nullitud!");
+        localStorage.setItem("kogus", 0);
     }
 
     const vahenda = () => {
         uuendaKogus (kogus - 1);
         uuendaSonum("Vähendatud!");
+        localStorage.setItem("kogus", kogus - 1);
     }
 
     const suurenda = () => {
         uuendaKogus (kogus + 1);
         uuendaSonum("Suurendatud!");
-
+        localStorage.setItem("kogus", kogus + 1);
     }
     
     return (
