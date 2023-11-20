@@ -5,7 +5,7 @@ function LisaToode() {
     const inputiLuger = useRef();
 
     function lisa() {
-        if(inputiLuger.current.value === "") {
+        if (inputiLuger.current.value === "") {
             maaraSonum("Tuhja nimetusega ei saa toodet lisada");
 
         } else {

@@ -7,6 +7,7 @@ import Ostukorv from "./pages/Ostukorv";
 import Seaded from "./pages/Seaded";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
+import Profiil from './pages/Profiil';
 
 // kui impordin node_modules sees siis, kirjutan kohe kausta nime, kust võtan
 // kui impordin meie failide seast (src kaustas olevatest), pean kirjutama algusesse "./" või "../"
@@ -47,12 +48,17 @@ function App() {
         <button className="nupu-stiil">Seaded</button>
       </Link>
 
+      <Link to="/profiil">
+        <button className="nupu-stiil">Profiil</button>
+      </Link>
+
       <Routes>
         {/* siin on valiidsete URLde nimistu, path="" jutumärkide sees */}
         <Route path="avaleht" element={ <Avaleht/> } />
         <Route path="ostukorv" element={ <Ostukorv/> } />
         <Route path="lisa-toode" element={ <LisaToode/>  } />
         <Route path="seaded" element={ <Seaded/>  } />
+        <Route path="profiil" element={ <Profiil/>  } />
         <Route path="*" element={ <NotFound/>  } />
       </Routes>
 
