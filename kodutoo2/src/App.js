@@ -5,7 +5,7 @@ import Meist from "./pages/Meist";
 import Kontakt from "./pages/Kontakt";
 import Seaded from "./pages/Seaded";
 import { useState } from "react";
-import { useRef} from "react"
+import { useRef} from "react";
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       <br/>
       <label>Parool</label> <br/>
       <input ref={paroolRef} type="password"/><br/>
-    </div>}
+    </div> }
 
       { sisselogitud === "ei" && <button onClick={logiSisse}>Logi sisse</button> }
       { sisselogitud === "jah" && <button onClick={logiValja}>Logi valja</button> }

@@ -13,12 +13,14 @@ function Profiil() {
     const sisestaAadress = () => {
 
         if (aadViide.current.value === "") {
-            alert("Vali on kohustuslik")
+            toast("Vali on kohustuslik");
+            // alert("Vali on kohustuslik")
             return
         };
 
         if (aadViide.current.value[0].toLowerCase() === aadViide.current.value[0]) {
-            alert("Peab algama suure algustahega")
+            toast("Peab algama suure algustahega");
+            // alert("Peab algama suure algustahega")
             return
         };
 
@@ -29,12 +31,14 @@ function Profiil() {
     const sisestaEmail = () => {
 
         if (emailViide.current.value === "") {
-            alert("Emaili vali on tuhi")
+            toast("Emaili vali on tuhi");
+            //alert("Emaili vali on tuhi")
             return // <----- katkesta funktsioon, early return
         };
 
         if (emailViide.current.value.includes ("@") === false) {
-            alert("Emaili ei ole korrektne")
+            toast("Emaili ei ole korrektne");
+            //alert("Emaili ei ole korrektne")
             return
         };
         setEmail(emailViide.current.value);
@@ -44,12 +48,14 @@ function Profiil() {
     const sisestaTelefon = () => {
 
         if (telViide.current.value === "") {
-            alert("Telefoni sisestamine on kohustuslik")
+            toast("Telefoni sisestamine on kohustuslik");
+            // alert("Telefoni sisestamine on kohustuslik")
             return
         };
 
         if (telViide.current.value.startsWith("+372") === "") {
-            alert("Sisesta algusese Eesti suunakood")
+            toast("Sisesta algusese Eesti suunakood");
+            // alert("Sisesta algusese Eesti suunakood")
             return
         };
 
