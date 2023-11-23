@@ -5,6 +5,7 @@ import Avaleht from "./pages/Avaleht";
 import LisaToode from "./pages/LisaToode";
 import Ostukorv from "./pages/Ostukorv";
 import Seaded from "./pages/Seaded";
+import LogIn from "./pages/LogIn";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import Profiil from './pages/Profiil';
@@ -52,6 +53,10 @@ function App() {
         <button className="nupu-stiil">Profiil</button>
       </Link>
 
+      <Link to="/login">
+        <button className="nupu-stiil">Login</button>
+      </Link>
+
       <Routes>
         {/* siin on valiidsete URLde nimistu, path="" jutumärkide sees */}
         <Route path="avaleht" element={ <Avaleht/> } />
@@ -59,6 +64,7 @@ function App() {
         <Route path="lisa-toode" element={ <LisaToode/>  } />
         <Route path="seaded" element={ <Seaded/>  } />
         <Route path="profiil" element={ <Profiil/>  } />
+        <Route path="login" element={<LogIn/>  } />
         <Route path="*" element={ <NotFound/>  } />
       </Routes>
 

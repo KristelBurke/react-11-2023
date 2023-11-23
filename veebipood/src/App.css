@@ -54,3 +54,17 @@
 .ikoon:active {
   box-shadow: 0px 0px 10px 10px; 
 }
+.error {
+  color: #e4175c;
+  font-size: 12px;
+  margin: 3px;
+}
+.red {
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+input {
+  outline: none;
+}
+

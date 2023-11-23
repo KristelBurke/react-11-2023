@@ -13,13 +13,13 @@ function Profiil() {
     const sisestaAadress = () => {
 
         if (aadViide.current.value === "") {
-            toast("Vali on kohustuslik");
+            toast.error("Vali on kohustuslik");
             // alert("Vali on kohustuslik")
             return
         };
 
         if (aadViide.current.value[0].toLowerCase() === aadViide.current.value[0]) {
-            toast("Peab algama suure algustahega");
+            toast.error("Peab algama suure algustahega");
             // alert("Peab algama suure algustahega")
             return
         };
@@ -31,16 +31,22 @@ function Profiil() {
     const sisestaEmail = () => {
 
         if (emailViide.current.value === "") {
-            toast("Emaili vali on tuhi");
+            toast.error("Emaili vali on tuhi");
             //alert("Emaili vali on tuhi")
             return // <----- katkesta funktsioon, early return
-        };
+        }
 
         if (emailViide.current.value.includes ("@") === false) {
-            toast("Emaili ei ole korrektne");
+            toast.error("Email peab sisaldama @");
             //alert("Emaili ei ole korrektne")
             return
-        };
+        }
+
+        if (emailViide.current.value.includes (".") === false) {
+            toast.error("Email peab sisaldama .");
+            //alert("Emaili ei ole korrektne")
+            return
+        }
         setEmail(emailViide.current.value);
         localStorage.setItem("email", emailViide.current.value);
     }
@@ -48,16 +54,16 @@ function Profiil() {
     const sisestaTelefon = () => {
 
         if (telViide.current.value === "") {
-            toast("Telefoni sisestamine on kohustuslik");
+            toast.error("Telefoni sisestamine on kohustuslik");
             // alert("Telefoni sisestamine on kohustuslik")
             return
-        };
+        }
 
         if (telViide.current.value.startsWith("+372") === "") {
-            toast("Sisesta algusese Eesti suunakood");
+            toast.error("Sisesta algusese Eesti suunakood");
             // alert("Sisesta algusese Eesti suunakood")
             return
-        };
+        }
 
         setTelefon(telViide.current.value);
         localStorage.setItem("telefon", telViide.current.value);
@@ -103,7 +109,10 @@ function Profiil() {
             <br/>
             <br/>
 
-            <ToastContainer />
+            <ToastContainer 
+            position="bottom-right"
+            theme="dark"/>
+            
             
         </div>
     )
