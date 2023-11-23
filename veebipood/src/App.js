@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound";
 import { useState } from "react";
 import Profiil from './pages/Profiil';
 import Tootajad from './pages/Tootajad';
+import Tooted from './pages/Tooted';
+import Poed from './pages/Poed';
 
 // kui impordin node_modules sees siis, kirjutan kohe kausta nime, kust võtan
 // kui impordin meie failide seast (src kaustas olevatest), pean kirjutama algusesse "./" või "../"
@@ -62,6 +64,14 @@ function App() {
         <button className="nupu-stiil">Tootajad</button>
       </Link>
 
+      <Link to="/tooted">
+        <button className="nupu-stiil">Tooted</button>
+      </Link>
+
+      <Link to="/poed">
+        <button className="nupu-stiil">Poed</button>
+      </Link>
+
       <Routes>
         {/* siin on valiidsete URLde nimistu, path="" jutumärkide sees */}
         <Route path="avaleht" element={ <Avaleht/> } />
@@ -71,10 +81,12 @@ function App() {
         <Route path="profiil" element={ <Profiil/>  } />
         <Route path="login" element={<LogIn/>  } />
         <Route path="tootajad" element={<Tootajad/>  } />
+        <Route path="tooted" element={<Tooted/>  } />
+        <Route path="poed" element={<Poed/>  } />
         <Route path="*" element={ <NotFound/>  } />
       </Routes>
 
-     <div>FOOTER</div>
+     {/* <div>FOOTER</div> */}
     </div>
   );
 }

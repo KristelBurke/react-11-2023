@@ -4,7 +4,7 @@ function Tooted() {
     const tooted = ["Nobe", "Tesla", "BMW"]
     return (
         <div>
-            Tooted
+            {tooted.map(element => <div>{element}</div>)}
         </div>
     )
 }

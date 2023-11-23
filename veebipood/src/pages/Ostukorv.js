@@ -4,7 +4,7 @@ function Ostukorv() {
     return (
         <div>
             <div>
-                Ostukorv on tühi]
+                Ostukorv on tühi
             </div>
             <Link to="/avaleht">
                 <button>Avalehele</button>
