@@ -5,6 +5,7 @@ import Meist from "./pages/Meist";
 import Kontakt from "./pages/Kontakt";
 import Seaded from "./pages/Seaded";
 import Loader from "./pages/Loader";
+import Leht from "./pages/Leht";
 import { useState } from "react";
 import { useRef} from "react";
 
@@ -65,12 +66,17 @@ function App() {
         <button>Loader</button>
       </Link>
 
+      <Link to="/leht">
+        <button>Leht</button>
+      </Link>
+
       <Routes>
         <Route path="/" exact element={ <Avaleht/>} />
         <Route path="/meist" exact element={ <Meist/>} />
         <Route path="/kontakt" exact element={ <Kontakt/>} />
         <Route path="/seaded" exact element={ <Seaded/>} />
         <Route path="/loader" exact element={ <Loader/>} />
+        <Route path="/leht" exact element={ <Leht/>} />
       </Routes>
 
     </div>
