@@ -81,7 +81,7 @@ function App() {
       </Link>
 
       <Link to="/seaded">
-        <button>Seaded</button>
+        <button>Seadetesse</button>
       </Link>
 
       <Link to="/loader">
