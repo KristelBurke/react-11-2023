@@ -8,6 +8,8 @@ import Loader from "./pages/Loader";
 import Leht from "./pages/Leht";
 import { useState } from "react";
 import { useRef} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 function App() {
@@ -16,14 +18,34 @@ function App() {
   const kasutajaNimiRef = useRef();
   const paroolRef = useRef();
 
-  const logiSisse = () => {
-    if (paroolRef.current.value === "123"){
-      muudaSisselogitud("jah");
-      muudaSonum("Kristel, oled sisse logitud");
-    } else {
-      muudaSonum("Vale parool");
-    }
-  }
+  const logiSisse = () => {
+        if (paroolRef.current.value === "Kristel123%"){
+          muudaSisselogitud("jah");
+          muudaSonum(kasutajaNimiRef.current.value + ", oled sisse logitud!");
+          toast.success(kasutajaNimiRef.current.value + ", oled sisse logitud!");
+        return;
+        }
+        if (paroolRef.current.value.length < 8 ){
+          toast.error("Parool liiga luhike")
+        return;
+        }
+        if (paroolRef.current.value.toLowerCase() === paroolRef.current.value ){
+          toast.error("Parool peab sisaldama suurt tahte")
+        return;
+        }
+        if (paroolRef.current.value.toUpperCase() === paroolRef.current.value ){
+          toast.error("Parool peab sisaldama vaikest tahte")
+        return;
+        }
+        if (paroolRef.current.value.includes("%") === false ){
+          toast.error("Parool peab sisaldama %")
+        return;
+        }
+
+        toast.error("Vale parool");
+        muudaSonum("Vale parool");
+      }
+  
   const logiValja = () => {
       muudaSisselogitud("ei");
       muudaSonum ("Kristel, oled valja logitud!");
@@ -78,7 +100,9 @@ function App() {
         <Route path="/loader" exact element={ <Loader/>} />
         <Route path="/leht" exact element={ <Leht/>} />
       </Routes>
-
+      <ToastContainer
+       position="top-right"
+       theme="dark"/>
     </div>
   );
 }
