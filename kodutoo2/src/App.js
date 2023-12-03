@@ -6,6 +6,7 @@ import Kontakt from "./pages/Kontakt";
 import Seaded from "./pages/Seaded";
 import Loader from "./pages/Loader";
 import Leht from "./pages/Leht";
+import Logimine from "./pages/Logimine";
 import { useState } from "react";
 import { useRef} from "react";
 import { ToastContainer, toast } from 'react-toastify';
@@ -90,6 +91,10 @@ function App() {
 
       <Link to="/leht">
         <button>Leht</button>
+      </Link> 
+
+      <Link to="/logimine">
+        <button>Logimine</button>
       </Link>
 
       <Routes>
@@ -99,7 +104,9 @@ function App() {
         <Route path="/seaded" exact element={ <Seaded/>} />
         <Route path="/loader" exact element={ <Loader/>} />
         <Route path="/leht" exact element={ <Leht/>} />
+        <Route path="/logimine" exact element={ <Logimine/>} />
       </Routes>
+      
       <ToastContainer
        position="top-right"
        theme="dark"/>
