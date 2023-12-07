@@ -7,6 +7,9 @@ import Seaded from "./pages/Seaded";
 import Loader from "./pages/Loader";
 import Leht from "./pages/Leht";
 import Logimine from "./pages/Logimine";
+import Months from "./pages/Months";
+import Animals from "./pages/Animals";
+import Words from "./pages/Words";
 import { useState } from "react";
 import { useRef} from "react";
 import { ToastContainer, toast } from 'react-toastify';
@@ -97,6 +100,18 @@ function App() {
         <button>Logimine</button>
       </Link>
 
+      <Link to="/months">
+        <button>Months</button>
+      </Link>
+
+      <Link to="/animals">
+        <button>Animals</button>
+      </Link>
+
+      <Link to="/words">
+        <button>Words</button>
+      </Link>
+
       <Routes>
         <Route path="/" exact element={ <Avaleht/>} />
         <Route path="/meist" exact element={ <Meist/>} />
@@ -105,6 +120,9 @@ function App() {
         <Route path="/loader" exact element={ <Loader/>} />
         <Route path="/leht" exact element={ <Leht/>} />
         <Route path="/logimine" exact element={ <Logimine/>} />
+        <Route path="/months" exact element={ <Months/>} />
+        <Route path="/animals" exact element={ <Animals/>} />
+        <Route path="/words" exact element={ <Words/>} />
       </Routes>
       
       <ToastContainer
