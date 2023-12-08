@@ -12,6 +12,7 @@ import Profiil from './pages/Profiil';
 import Tootajad from './pages/Tootajad';
 import Tooted from './pages/Tooted';
 import Poed from './pages/Poed';
+import Hinnad from './pages/Hinnad';
 
 // kui impordin node_modules sees siis, kirjutan kohe kausta nime, kust võtan
 // kui impordin meie failide seast (src kaustas olevatest), pean kirjutama algusesse "./" või "../"
@@ -72,6 +73,10 @@ function App() {
         <button className="nupu-stiil">Poed</button>
       </Link>
 
+      <Link to="/hinnad">
+        <button className="nupu-stiil">Hinnad</button>
+      </Link>
+
       <Routes>
         {/* siin on valiidsete URLde nimistu, path="" jutumärkide sees */}
         <Route path="avaleht" element={ <Avaleht/> } />
@@ -83,6 +88,7 @@ function App() {
         <Route path="tootajad" element={<Tootajad/>  } />
         <Route path="tooted" element={<Tooted/>  } />
         <Route path="poed" element={<Poed/>  } />
+        <Route path="hinnad" element={<Hinnad/>  } />
         <Route path="*" element={ <NotFound/>  } />
       </Routes>
 

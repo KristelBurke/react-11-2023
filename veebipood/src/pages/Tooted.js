@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function Tooted() {
-    const tooted = ["Nobe", "Tesla", "BMW"]
+    const [tooted, uuendaTooted] = useState(["Nobe", "Tesla", "BMW"]);
+
+    const kustuta = (index) => {
+        tooted.splice(index, 1);
+        uuendaTooted(tooted.slice());
+    }
+    
     return (
         <div>
-            {tooted.map(element => <div>{element}</div>)}
+            <br/>
+            {tooted.map((element, index) => 
+            <div>
+                <span>{element}</span>
+                <button onClick={() => kustuta(index)}>X</button>
+            </div>
+        )}
         </div>
     )
 }

@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 
 function Tootajad() {
-    const tootajad = ["Pille", "Kalle", "Malle", "Sille"];
+    const [tootajad, uuendaTootajad] = useState(["Pille", "Kalle", "Malle", "Sille"]);
+    const tootajaRef =useRef();
+
+    const kustuta = (i)=> {
+        tootajad.splice(i, 1);
+        uuendaTootajad(tootajad.slice());
+    }
+
+    const lisa =() => {
+        tootajad.push(tootajaRef.current.value);
+        uuendaTootajad(tootajad.slice());
+    }
+
+    return (
+        <div>
+            <br/>
+            <label>Tootaja nimi</label><br/>
+            <input ref={tootajaRef} type="text"/><br/>
+            <button onClick={lisa}>Sisesta</button><br/>
+            <br/>
+
+            {tootajad.map((element, index) => 
+            <button onClick={() => kustuta(index)}>{element}</button>
+            )}
+        </div>
+    )
+}
+
+export default Tootajad
 
   // Array (Massiiv, List) väljakuvamiseks on vaja see muutuja, mille sees on Array
   // (tema väärtus on kandilisest sulust kandilise suluni)
@@ -15,12 +43,3 @@ function Tootajad() {
   // ["Pille", "Kalle", "Malle", "Sille"].map("Kalle" => <button>Kalle</button> )
   // ["Pille", "Kalle", "Malle", "Sille"].map("Malle" => <button>Malle</button> )
   // ["Pille", "Kalle", "Malle", "Sille"].map("Sille" => <button>Sille</button> )
-
-    return (
-        <div>
-            {tootajad.map(element => <button>{element}</button>)}
-        </div>
-    )
-}
-
-export default Tootajad
