@@ -1,5 +1,8 @@
 import { Link, Route, Routes } from "react-router-dom"
 import './App.css';
+import { useState } from "react";
+import { useRef} from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import Avaleht from "./pages/Avaleht";
 import Meist from "./pages/Meist";
 import Kontakt from "./pages/Kontakt";
@@ -10,9 +13,8 @@ import Logimine from "./pages/Logimine";
 import Months from "./pages/Months";
 import Animals from "./pages/Animals";
 import Words from "./pages/Words";
-import { useState } from "react";
-import { useRef} from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import Books from "./pages/Books";
+
 
 
 
@@ -112,6 +114,10 @@ function App() {
         <button>Words</button>
       </Link>
 
+      <Link to="/books">
+        <button>Books</button>
+      </Link>
+
       <Routes>
         <Route path="/" exact element={ <Avaleht/>} />
         <Route path="/meist" exact element={ <Meist/>} />
@@ -123,6 +129,7 @@ function App() {
         <Route path="/months" exact element={ <Months/>} />
         <Route path="/animals" exact element={ <Animals/>} />
         <Route path="/words" exact element={ <Words/>} />
+        <Route path="/books" exact element={ <Books/>} />
       </Routes>
       
       <ToastContainer
