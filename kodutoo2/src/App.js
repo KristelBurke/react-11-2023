@@ -14,6 +14,7 @@ import Months from "./pages/Months";
 import Animals from "./pages/Animals";
 import Words from "./pages/Words";
 import Books from "./pages/Books";
+import Numbrid from "./pages/Numbrid";
 
 
 
@@ -118,6 +119,10 @@ function App() {
         <button>Books</button>
       </Link>
 
+      <Link to="/numbrid">
+        <button>Numbrid</button>
+      </Link>
+
       <Routes>
         <Route path="/" exact element={ <Avaleht/>} />
         <Route path="/meist" exact element={ <Meist/>} />
@@ -130,6 +135,7 @@ function App() {
         <Route path="/animals" exact element={ <Animals/>} />
         <Route path="/words" exact element={ <Words/>} />
         <Route path="/books" exact element={ <Books/>} />
+        <Route path="/numbrid" exact element={ <Numbrid/>} />
       </Routes>
       
       <ToastContainer
