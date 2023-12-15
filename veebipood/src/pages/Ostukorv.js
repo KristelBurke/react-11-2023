@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ostukorvFailist from "../data/ostukorv.json";
 
 function Ostukorv() {
-    const [ostukorv, uuendaOstukorv] = useState(["Coca", "Fanta", "Sprite"]);
+    const [ostukorv, uuendaOstukorv] = useState(ostukorvFailist);
 
     const kustuta = (mitmes) => {
-        ostukorv.splice(mitmes,1);
-        uuendaOstukorv(ostukorv.slice());
+        ostukorvFailist.splice(mitmes,1);
+        uuendaOstukorv(ostukorvFailist.slice());
     }
 
     return (

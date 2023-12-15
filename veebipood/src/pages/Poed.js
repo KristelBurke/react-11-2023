@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import poedFailist from "../data/poed.json";
 
 function Poed() {
@@ -63,12 +63,7 @@ function Poed() {
         uuendaPoed(vastus);
     }
 
-    const poodRef = useRef();
-
-    const lisa = () => {
-        poed.push(poodRef.current.value);
-        uuendaPoed(poed.slice());
-    }
+   
 
     return (
         <div>
@@ -84,14 +79,7 @@ function Poed() {
             <button onClick={filtreeriKellelOn7Tahte}>Jata alles 7 tahega </button>
             <button onClick={filtreeriKellelOn9Tahte}>Jata alles 9 tahega </button>
             <button onClick={filtreeriKolmasTahtI}>Jata alles kolmas taht 'i' </button>
-            <button onClick={originaali}>Tagasi originaali </button>
-            <br/>
-            <br/>
-            
-            <label>Poe nimi</label><br/>
-            <input ref={poodRef} type="text"/><br/>
-            <button onClick={lisa}>Sisesta</button><br/>
-            <br/>
+            <button onClick={originaali}>Filtrid maha</button>
         </div>
     )
 }

@@ -13,6 +13,8 @@ import Tootajad from './pages/Tootajad';
 import Tooted from './pages/Tooted';
 import Poed from './pages/Poed';
 import Hinnad from './pages/Hinnad';
+import HaldaTooted from './pages/HaldaTooted';
+import PoedHalda from './pages/PoedHalda';
 
 // kui impordin node_modules sees siis, kirjutan kohe kausta nime, kust võtan
 // kui impordin meie failide seast (src kaustas olevatest), pean kirjutama algusesse "./" või "../"
@@ -77,6 +79,14 @@ function App() {
         <button className="nupu-stiil">Hinnad</button>
       </Link>
 
+      <Link to="/halda">
+        <button className="nupu-stiil">HaldaTooted</button>
+      </Link>
+
+      <Link to="/poedhalda">
+        <button className="nupu-stiil">PoedHalda</button>
+      </Link>
+
       <Routes>
         {/* siin on valiidsete URLde nimistu, path="" jutumärkide sees */}
         <Route path="avaleht" element={ <Avaleht/> } />
@@ -89,7 +99,10 @@ function App() {
         <Route path="tooted" element={<Tooted/>  } />
         <Route path="poed" element={<Poed/>  } />
         <Route path="hinnad" element={<Hinnad/>  } />
+        <Route path="halda" element={<HaldaTooted/>  } />
+        <Route path="poedhalda" element={<PoedHalda/>  } />
         <Route path="*" element={ <NotFound/>  } />
+
       </Routes>
 
      {/* <div>FOOTER</div> */}

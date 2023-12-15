@@ -6,6 +6,9 @@ import Toggle from "./pages/Toggle";
 import Color from "./pages/Color";
 import Visible from "./pages/Visible";
 import LikeCount from "./pages/LikeCount";
+import Arrays from "./pages/Arrays";
+
+
 
 
 
@@ -37,6 +40,10 @@ function App() {
         <button>LikeCount</button>
       </Link>
 
+      <Link to="/arrays">
+        <button>Arrays</button>
+      </Link>
+
       <Routes> 
         <Route path="/" exact element={ <Avaleht/> }/>
         <Route path="/kogus" exact element={ <Kogus/> }/>
@@ -44,6 +51,7 @@ function App() {
         <Route path="/color" exact element={ <Color/> }/>
         <Route path="/visible" exact element={ <Visible/> }/>
         <Route path="/likecount" exact element={ <LikeCount/> }/>
+        <Route path="/arrays" exact element={ <Arrays/> }/>
       </Routes>
   
     </div>
