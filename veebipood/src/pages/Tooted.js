@@ -36,7 +36,7 @@ function Tooted() {
     
     const lisaOstukorvi = (toode) => {
         // fail: ["Coca", "Fanta", "Sprite"]
-        // fail.push( "red Bull") ----> ["Coca", "Fanta", "Sprite"]
+        // fail.push("red Bull") ----> ["Coca", "Fanta", "Sprite"]
         ostukorvFailist.push(toode);
     }
 
