@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
+import tootajadFailist from "../data/tootajad.json";
 
 function Tootajad() {
-    const [tootajad, uuendaTootajad] = useState(["Pille", "Kalle", "Malle", "Sille"]);
+    const [tootajad, uuendaTootajad] = useState(tootajadFailist);
     const tootajaRef =useRef();
 
     const kustuta = (i)=> {
