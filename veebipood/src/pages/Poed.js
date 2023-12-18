@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import poedFailist from "../data/poed.json";
+import { Link } from 'react-router-dom';
+
 
 function Poed() {
     const [poed, uuendaPoed] = useState( poedFailist);
@@ -10,56 +12,56 @@ function Poed() {
 
     const sorteeriAZ = () => {
         // poed.sort();
-        poed.sort((a, b) => a.localeCompare(b)); // a vordle b-ga
+        poed.sort((a, b) => a.nimi.localeCompare(b.nimi)); // a vordle b-ga
         uuendaPoed(poed.slice());
     }
 
     const sorteeriZA = () => {
-        poed.sort((a, b) => b.localeCompare(a));
+        poed.sort((a, b) => b.nimi.localeCompare(a.nimi));
         uuendaPoed(poed.slice());
     }
 
     const sorteeriTahedKasvavalt = () => {
         // poed.sort();
-        poed.sort((a, b) => a.length - b.length);
+        poed.sort((a, b) => a.nimi.length - b.nimi.length);
         uuendaPoed(poed.slice());
     }
 
     const sorteeriTahedKahanevalt = () => {
         // poed.sort();
-        poed.sort((a, b) => b.length - a.length);
+        poed.sort((a, b) => b.nimi.length - a.nimi.length);
         uuendaPoed(poed.slice());
     }
 
     const sorteeriKolmandaTaheJargi = () => {
         // poed.sort();
-        poed.sort((a, b) => a[2].localeCompare(b[2]));
+        poed.sort((a, b) => a.nimi[2].localeCompare(b.nimi[2]));
         uuendaPoed(poed.slice());
     }
 
     const filtreeriEgaLoppevad = () => {
-        const vastus = poed.filter(uksPood=> uksPood.endsWith("e"));
+        const vastus = poed.filter(uksPood=> uksPood.nimi.endsWith("e"));
         uuendaPoed(vastus);
     }
 
     const filtreeriIsSisaldavad = () => {
-        const vastus = poed.filter(uksPood=> uksPood.includes("is"));
+        const vastus = poed.filter(uksPood=> uksPood.nimi.includes("is"));
         uuendaPoed(vastus);
     }
 
     const filtreeriKellelOn7Tahte = () => {
-        const vastus = poed.filter(uksPood=> uksPood.length >= 7);
+        const vastus = poed.filter(uksPood=> uksPood.nimi.length >= 7);
         uuendaPoed(vastus);
     }
 
     const filtreeriKellelOn9Tahte = () => {
-        const vastus = poed.filter(uksPood=> uksPood.length >= 9);
+        const vastus = poed.filter(uksPood=> uksPood.nimi.length >= 9);
         uuendaPoed(vastus);
     }
 
     const filtreeriKolmasTahtI = () => {
         //const vastus = poed.filter(uksPood => uksPood[2] === "i");
-        const vastus = poed.filter(uksPood => uksPood.charAt(2) === "i"); // character At
+        const vastus = poed.filter(uksPood => uksPood.nimi.charAt(2) === "i"); // character At
         uuendaPoed(vastus);
     }
 
@@ -67,7 +69,15 @@ function Poed() {
 
     return (
         <div>
-            {poed.map(element => <div>{element}</div>)}
+            <br/>
+            {poed.map((element, index) => 
+                <div>
+                    {element.nimi} - {element.aadress}
+                    <Link to={"/pood/" + index}>
+                        <button>Vaata lahemalt</button>
+                    </Link>
+                    
+                </div>)}
             <br/>
             <button onClick={sorteeriAZ}>Sorteeri A-Z </button>
             <button onClick={sorteeriZA}>Sorteeri Z-A </button>
