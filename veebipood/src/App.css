@@ -76,10 +76,10 @@ input {
 
 .aktiivne {
   border: 1px solid green;
-  background-color: rgb(246, 248, 246);
+  background-color: rgb(227, 240, 227);
 }
 
 .mitte-aktiivne {
   border: 1px solid red;
-  background-color: rgb(246, 241, 241);
+  background-color: rgb(230, 218, 218);
 }

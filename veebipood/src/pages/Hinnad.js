@@ -34,6 +34,11 @@ function Hinnad() {
         uuendaHinnad(vastus);
     }
 
+    const arvutaNumbridKokku  = () => {
+        let summa = 0;
+        hinnad.forEach(element => summa = summa + element);
+        return summa;
+    }
 
     return (
         <div>
@@ -50,6 +55,8 @@ function Hinnad() {
           <button onClick={filtreeriVah50}>Vahemalt 50</button>
           <button onClick={filtreeriSisaldab5}>Sisaldab 5</button>
           <button onClick={filtreeriAlgab1}>Algavad 1-ga</button>
+          <br />
+          <div>{arvutaNumbridKokku()} tk</div>
         </div>
     )
 }

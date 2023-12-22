@@ -17,7 +17,7 @@ function HaldaTooted() {
         <div>
             <br/>
             {tooted.map((element, index) => 
-            <div className={element.aktiivne === true ? "aktiivne" : "mitteaktiivne"} key={index}>
+            <div className={element.aktiivne === true ? "aktiivne" : "mitte-aktiivne"} key={index}>
                 <img className="pilt" src={element.pilt} alt=""/>
                 <div>{element.nimi}</div>
                 <div>{element.hind}</div>

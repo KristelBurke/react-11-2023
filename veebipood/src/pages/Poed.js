@@ -67,7 +67,8 @@ function Poed() {
     
     const arvutaTahedKokku  = () => {
         let summa = 0;
-        
+        poed.forEach(element => summa = summa + element.nimi.length);
+        return summa;
     }
    
 
@@ -94,6 +95,8 @@ function Poed() {
             <button onClick={filtreeriKellelOn9Tahte}>Jata alles 9 tahega </button>
             <button onClick={filtreeriKolmasTahtI}>Jata alles kolmas taht 'i' </button>
             <button onClick={originaali}>Filtrid maha</button>
+            <br />
+            <div>{arvutaTahedKokku()} tk</div>
         </div>
     )
 }

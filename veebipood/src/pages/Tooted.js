@@ -59,7 +59,7 @@ function Tooted() {
             <br/>
             {tooted.map((element, index) => 
             <div key={index}>
-                <img className={element.aktiivne === true ? "pilt" : "pilt-mitteaktiivne"}src={element.pilt} alt=""/>
+                <img className={element.aktiivne === true ? "pilt" : "pilt-mitte-aktiivne"}src={element.pilt} alt=""/>
                 <span>{element.nimi} - {element.hind}€ </span>
                 <br/>
                 <button onClick={() => lisaOstukorvi(element)}>Lisa ostukorvi</button>
