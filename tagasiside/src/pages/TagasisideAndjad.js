@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from "react-router-dom"
 import andjateFail from "../nimed.json";
 
 function TagasisideAndjad() {
@@ -62,6 +63,9 @@ function TagasisideAndjad() {
             {andjad.map((element, index) => 
                 <div key={element}>
                     {element} <button onClick = {() => kustuta(index)}>x</button>
+                    <Link to={"/yks-andja/" + index}>
+                    <button>Vaata detailsemalt</button>
+                    </Link>
                     </div>)}
                     <br/>
             <label>Lisa uus nimi</label> <br/>
