@@ -20,7 +20,12 @@
 .pilt{
   width: 200px;
   /* height: 200px; */
-  
+}
+
+.pilt-mitteaktiivne{
+  filter: grayscale(100%);
+  width: 200px;
+  opacity: 30%;
 }
 
 .pilt:hover {
@@ -69,3 +74,12 @@ input {
   outline: none;
 }
 
+.aktiivne {
+  border: 1px solid green;
+  background-color: rgb(246, 248, 246);
+}
+
+.mitte-aktiivne {
+  border: 1px solid red;
+  background-color: rgb(246, 241, 241);
+}

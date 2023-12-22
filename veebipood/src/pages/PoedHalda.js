@@ -23,7 +23,7 @@ function PoedHalda() {
         uuendaPoed(poedFailist.slice());
     }
     return (
-        <div>
+        <div >
             <label>Poe nimi</label><br/>
             <input ref={poodRef} type="text"/><br/>
             <label>Poe telefon</label><br/>
@@ -34,7 +34,7 @@ function PoedHalda() {
             <br/>
             <br/>
            {poed.map((element, index) => 
-           <div>
+           <div key={index}>
                <div>{element.nimi}</div>
                <div>{element.aadress}</div>
                <div>{element.tel}</div>

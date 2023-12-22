@@ -64,14 +64,18 @@ function Poed() {
         const vastus = poed.filter(uksPood => uksPood.nimi.charAt(2) === "i"); // character At
         uuendaPoed(vastus);
     }
-
+    
+    const arvutaTahedKokku  = () => {
+        let summa = 0;
+        
+    }
    
 
     return (
         <div>
             <br/>
             {poed.map((element, index) => 
-                <div>
+                <div key={index}>
                     {element.nimi} - {element.aadress}
                     <Link to={"/pood/" + index}>
                         <button>Vaata lahemalt</button>

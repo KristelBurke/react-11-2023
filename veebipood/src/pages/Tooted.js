@@ -40,13 +40,28 @@ function Tooted() {
         // fail.push("red Bull") ----> ["Coca", "Fanta", "Sprite"]
         ostukorvFailist.push(toode);
     }
+    const NgaAlgavad = () => {
+        const vastus = tootedFailist.filter(toode => toode.nimi.startsWith("N"));
+        uuendaTooted(vastus)
+
+    }
+    const BgaAlgavad = () => {
+        const vastus = tootedFailist.filter(toode => toode.nimi.startsWith("B"));
+        uuendaTooted(vastus)
+    }
+    const TgaAlgavad = () => {
+        const vastus = tootedFailist.filter(toode => toode.nimi.startsWith("T"));
+        uuendaTooted(vastus)
+    }
 
     return (
         <div>
             <br/>
             {tooted.map((element, index) => 
-            <div>
-                <span>{element}</span>
+            <div key={index}>
+                <img className={element.aktiivne === true ? "pilt" : "pilt-mitteaktiivne"}src={element.pilt} alt=""/>
+                <span>{element.nimi} - {element.hind}€ </span>
+                <br/>
                 <button onClick={() => lisaOstukorvi(element)}>Lisa ostukorvi</button>
                 <Link to={"/toode/" + index}>
                     <button>Vaata lahemalt</button>
@@ -58,6 +73,9 @@ function Tooted() {
         <button onClick={sorteeriZA}>Sorteeri Z-A</button>
         <button onClick={sorteeriTahedKasvavalt}>Sorteeri kasvavalt</button>
         <button onClick={sorteeriTahedKahanevalt}>Sorteeri kahanevalt</button>
+        <button onClick={NgaAlgavad}>N</button>
+        <button onClick={BgaAlgavad}>B</button>
+        <button onClick={TgaAlgavad}>T</button>
 
         </div>
     )

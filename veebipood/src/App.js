@@ -18,7 +18,9 @@ import PoedHalda from './pages/PoedHalda';
 import Kontakt from './pages/Kontakt';
 import YksPood from './pages/YksPood';
 import YksToode from './pages/YksToode';
+import YksikHind from './pages/YksikHind';
 import YksTootaja from './pages/YksTootaja';
+import MuudaToode from './pages/MuudaToode';
 
 // kui impordin node_modules sees siis, kirjutan kohe kausta nime, kust võtan
 // kui impordin meie failide seast (src kaustas olevatest), pean kirjutama algusesse "./" või "../"
@@ -84,11 +86,11 @@ function App() {
       </Link>
 
       <Link to="/halda">
-        <button className="nupu-stiil">HaldaTooted</button>
+        <button className="nupu-stiil">Halda Tooted</button>
       </Link>
 
       <Link to="/poedhalda">
-        <button className="nupu-stiil">PoedHalda</button>
+        <button className="nupu-stiil">Halda poode</button>
       </Link>
 
       <Link to="/kontakt">
@@ -112,7 +114,9 @@ function App() {
         <Route path="kontakt" element={ <Kontakt/>  } />
         <Route path="pood/:index" element={ <YksPood/>  } />
         <Route path="toode/:index" element={ <YksToode/>  } />
+        <Route path="hind/:jrknr/test/:hind/test2" element={ <YksikHind/>  } />
         <Route path="tootaja" element={ <YksTootaja/>  } />
+        <Route path="muuda/:jrknr" element={ <MuudaToode/>  } />
 
         <Route path="*" element={ <NotFound/>  } />
       </Routes>

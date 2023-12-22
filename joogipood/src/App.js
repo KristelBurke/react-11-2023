@@ -3,6 +3,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import Avaleht from "./pages/Avaleht";
 import LisaJook from "./pages/LisaJook";
 import HaldaJooke from "./pages/HaldaJooke";
+import Jook from "./pages/Jook";
 
 
 function App() {
@@ -20,10 +21,15 @@ function App() {
         <button>Halda jooke</button>
       </Link>
 
+      <Link to="/jook">
+        <button>Jook</button>
+      </Link>
+
       <Routes>
         <Route path="/" exact element={ <Avaleht/>}/>
         <Route path="/lisa" exact element={ <LisaJook/>}/>
         <Route path="/halda" exact element={ <HaldaJooke/>}/>
+        <Route path="/jook" exact element={ <Jook/>}/>
       </Routes>
 
     </div>

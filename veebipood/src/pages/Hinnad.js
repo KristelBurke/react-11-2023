@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import hinnadFailist from "../data/hinnad.json";
+
 
 function Hinnad() {
-    const [hinnad, uuendaHinnad] = useState([4, 6, 12, 5, 45, 321, 55, 77, 8, 9, 111]);
+    const [hinnad, uuendaHinnad] = useState(hinnadFailist);
 
     const hindKasvavalt =() => {
         hinnad.sort((a,b) => a - b );
@@ -34,7 +37,13 @@ function Hinnad() {
 
     return (
         <div>
-          {hinnad.map(hind =><div>{hind}</div>)}
+          {hinnad.map((hind, index) =>
+          <div>
+              <Link to={"/hind/" + index + "/test/" + hind + "/test2"}>
+              {hind}
+              </Link>
+              </div>
+              )}
           <button onClick={hindKasvavalt}>Hind kasvavalt</button>
           <button onClick={hindKahanevalt}>Hind kahanevalt</button>
           <button onClick={hindNaguSonaAZ}>Hind a-z</button>

@@ -24,7 +24,7 @@ function Tootajad() {
             <br/>
 
             {tootajad.map((element, index) => 
-            <button onClick={() => kustuta(index)}>{element}</button>
+            <button key={index} onClick={() => kustuta(index)}>{element}</button>
             )}
         </div>
     )
