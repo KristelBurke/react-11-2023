@@ -29,7 +29,7 @@ function App() {
         <Route path="/" exact element={ <Avaleht/>}/>
         <Route path="/lisa" exact element={ <LisaJook/>}/>
         <Route path="/halda" exact element={ <HaldaJooke/>}/>
-        <Route path="/jook" exact element={ <Jook/>}/>
+        <Route path="/jook/:number" exact element={ <Jook/>}/>
       </Routes>
 
     </div>
