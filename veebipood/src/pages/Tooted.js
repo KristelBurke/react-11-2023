@@ -59,7 +59,7 @@ function Tooted() {
             <br/>
             {tooted.map((element, index) => 
             <div key={index}>
-                <img className={element.aktiivne === true ? "pilt" : "pilt-mitte-aktiivne"}src={element.pilt} alt=""/>
+                <img className={element.aktiivne === true ? "pilt" : "pilt.mitte-aktiivne"}src={element.pilt} alt=""/>
                 <span>{element.nimi} - {element.hind}€ </span>
                 <br/>
                 <button onClick={() => lisaOstukorvi(element)}>Lisa ostukorvi</button>
@@ -73,11 +73,12 @@ function Tooted() {
         <button onClick={sorteeriZA}>Sorteeri Z-A</button>
         <button onClick={sorteeriTahedKasvavalt}>Sorteeri kasvavalt</button>
         <button onClick={sorteeriTahedKahanevalt}>Sorteeri kahanevalt</button>
-        <button onClick={NgaAlgavad}>N</button>
-        <button onClick={BgaAlgavad}>B</button>
-        <button onClick={TgaAlgavad}>T</button>
-
-        </div>
+        <button onClick={NgaAlgavad}>N-ga algavad</button>
+        <button onClick={BgaAlgavad}>B-ga algavad</button>
+        <button onClick={TgaAlgavad}>T-ga algavad</button>
+        <br />
+        <br />
+     </div>
     )
 }
 
