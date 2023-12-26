@@ -81,7 +81,6 @@ function Poed() {
                     <Link to={"/pood/" + index}>
                         <button>Vaata lahemalt</button>
                     </Link>
-                    
                 </div>)}
             <br/>
             <button onClick={sorteeriAZ}>Sorteeri A-Z </button>

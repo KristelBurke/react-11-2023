@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import tootajadFailist from "../data/tootajad.json";
+import { Link } from "react-router-dom";
 
 function Tootajad() {
     const [tootajad, uuendaTootajad] = useState(tootajadFailist);
@@ -10,7 +11,7 @@ function Tootajad() {
         uuendaTootajad(tootajad.slice());
     }
 
-    const lisa =() => {
+    const lisa = () => {
         tootajad.push(tootajaRef.current.value);
         uuendaTootajad(tootajad.slice());
     }
@@ -20,13 +21,20 @@ function Tootajad() {
             <br/>
             <label>Tootaja nimi</label><br/>
             <input ref={tootajaRef} type="text"/><br/>
-            <button onClick={lisa}>Sisesta</button><br/>
+            <button onClick={lisa}>Sisesta</button>
             <br/>
-
-            {tootajad.map((element, index) => 
-            <button key={index} onClick={() => kustuta(index)}>{element}</button>
-            )}
+            <br/>
+            {tootajad.map((element, index) => (
+            <div key={index}>
+                  <span>{element.nimi}</span>
+                 <button onClick={() => kustuta(index)}>Kustuta</button>
+                <Link to={"/tootaja/" + element}>
+                 <button>Vaata lahemalt</button>
+                </Link>
+            </div>      
+            ))}
         </div>
+
     )
 }
 

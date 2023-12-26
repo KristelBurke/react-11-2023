@@ -5,7 +5,7 @@ import poedFailist from "../data/poed.json"
 function YksPood() {
     // useParams on URLi seest muutujate kätte saamiseks
     // loogeliste sulgude sisse tuleb kirjutada täpselt sama
-    //      muutuja nagu läks URLi App.js seest (kooloni järgne sõna)
+    //  muutuja nagu läks URLi App.js seest (kooloni järgne sõna)
     const { index } = useParams();
 
     // õige poe otsimiseks

@@ -115,7 +115,7 @@ function App() {
         <Route path="pood/:index" element={ <YksPood/>  } />
         <Route path="toode/:index" element={ <YksToode/>  } />
         <Route path="hind/:jrknr/test/:hind/test2" element={ <YksikHind/>  } />
-        <Route path="tootaja" element={ <YksTootaja/>  } />
+        <Route path="tootaja/:index" element={ <YksTootaja/>  } />
         <Route path="muuda/:jrknr" element={ <MuudaToode/>  } />
 
         <Route path="*" element={ <NotFound/>  } />
