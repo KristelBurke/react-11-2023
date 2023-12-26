@@ -10,7 +10,7 @@ import HaldaUudiseid from './pages/HaldaUudiseid';
 
 function App() {
   return (
-    <div>
+    <div >
       <Link to="/">
          <button>Avalehele</button>
        </Link>
@@ -24,14 +24,14 @@ function App() {
        </Link>
 
        <Link to="/meist">
-         <button>Info meist</button>
+         <button>Meist</button>
        </Link>
 
-       <Link to="/meist">
+       <Link to="/lisa-uudis">
          <button>Lisa uudis</button>
        </Link>
 
-       <Link to="/meist">
+       <Link to="/halda-uudiseid">
          <button>Halda uudiseid</button>
        </Link>
 

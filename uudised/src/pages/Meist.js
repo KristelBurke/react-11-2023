@@ -1,34 +1,39 @@
-import {useState} from 'react'
+import { useState } from 'react';
 
 function Meist() {
     const [ kontakt, naitaKontakt] = useState("");
+    const tootajad = [
+        {nimi: "Mari Maasika", ala: "Uudised", telefon: "362123121"},
+        {nimi: "Virve Vihmavari", ala: "Kujundus", telefon: "+37212312"},
+        {nimi: "Hunt Kriimsilm", ala: "Reporter", telefon: "382123123"},
+        {nimi: "Kalle Kaalikas", ala: "Valisuudised", telefon: "392123124"},
+    ]
+
+    const [valitud, uuendaValitud] = useState();
+
+    const votaUhendust = (tootaja) => {
+        naitaKontakt(tootaja.telefon);
+        uuendaValitud(tootaja.nimi);
+    }
+
     return (
         <div>
             <div>See on meist leht, nahtav localhost:3000/meist aadressil</div>
+            <br />
             <div>Meie tootajad</div>
+            {/* VALITUD INIMENE: {valitud} */}
             <br/>
-
-            <div>Mari Maasikas</div>
-            <div>Uudised</div>
-            <button onClick={() => naitaKontakt("+362123123")}>Vota uhendust</button>
-            <br/>
-
-            <br/>
-            <div>Virve Vihmavari</div>
-            <div>Kujundus</div>
-            <button onClick={() => naitaKontakt("+372123123")}>Vota uhendust</button>
-            <br/>
-
-            <br/>
-            <div>Hunt Kriimsilm</div>
-            <div>Reporter</div>
-            <button onClick={() => naitaKontakt("+382123123")}>Vota uhendust</button>
-            <br/>
-
-            <br/>
-            <div>Kalle Kaalikas</div>
-            <div>Valisuudised</div>
-            <button onClick={() => naitaKontakt("+392123123")}>Vota uhendust</button>
+            <br />
+            <div>
+                {tootajad.map(tootaja =>
+                <div className={tootaja.nimi === valitud ? 'valitud' : undefined}>
+                    <div>{tootaja.nimi}</div>
+                    <div>{tootaja.ala}</div>
+                    <button onClick={() => votaUhendust(tootaja)}>Vota uhendust</button>
+                    <br />
+                    <br />
+                </div>)}
+            </div>
             <br/>
             <br/>
            { kontakt !== "" && <div>Tema kontakt: {kontakt}</div>}
