@@ -3,10 +3,11 @@ import { useState } from 'react';
 function Meist() {
     const [ kontakt, naitaKontakt] = useState("");
     const tootajad = [
-        {nimi: "Mari Maasika", ala: "Uudised", telefon: "362123121"},
-        {nimi: "Virve Vihmavari", ala: "Kujundus", telefon: "+37212312"},
-        {nimi: "Hunt Kriimsilm", ala: "Reporter", telefon: "382123123"},
-        {nimi: "Kalle Kaalikas", ala: "Valisuudised", telefon: "392123124"},
+        {nimi: "Mari Maasikas", ala: "Uudised", telefon: "352123121"},
+        {nimi: "Virve Vihmavari", ala: "Kujundus", telefon: "+36212312"},
+        {nimi: "Hunt Kriimsilm", ala: "Reporter", telefon: "372123123"},
+        {nimi: "Kalle Kaalikas", ala: "Valisuudised", telefon: "382123124"},
+        {nimi: "Kati Karu", ala: "Muusika", telefon: "392123125"}
     ]
 
     const [valitud, uuendaValitud] = useState();
