@@ -14,5 +14,8 @@
 
 .lang:active {
   padding: 1px;
+}
 
+.notfound_img {
+  height: 700px;
 }
