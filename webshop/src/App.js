@@ -26,6 +26,12 @@ function App() {
   const changeLangToEN = () => {
     i18n.changeLanguage("en")
   }
+  const changeLangToFIN = () => {
+    i18n.changeLanguage("fin")
+  }
+  const changeLangToRUS = () => {
+    i18n.changeLanguage("rus")
+  }
   return (
     <div className="App">
 
@@ -44,6 +50,8 @@ function App() {
             <Nav.Link>
             <img className='lang' onClick={changeLangToEE} src="/estonia.png" alt="" />
             <img className='lang' onClick={changeLangToEN} src="/english.png" alt="" />
+            <img className='lang' onClick={changeLangToFIN} src="/finnish.png" alt="" />
+            <img className='lang' onClick={changeLangToRUS} src="/russian.png" alt="" />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

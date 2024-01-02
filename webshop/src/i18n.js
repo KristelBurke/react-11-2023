@@ -29,7 +29,33 @@ const resources = {
         "contact": "Kontakteeru meiega",
         "cart": "Ostukorvi",
     }
-  }
+  },
+
+  fin: {
+    translation: {
+        "maintain-categories": "Säilytä luokkia",
+        "maintain-shops": "Ylläpidä kauppoja",
+        "add-product": "Lisää tuote",
+        "maintain-products": "Ylläpidä tuotteita",
+        "admin": "Järjestelmänvalvojanäkymään",
+        "shops": "Meidän kaupat",
+        "contact": "Ota meihin yhteyttä",
+        "cart": "Kärryyn",
+    }
+  },
+
+  rus: {
+    translation: {
+        "maintain-categories": "Управление категориями",
+        "maintain-shops": "Управление магазинами",
+        "add-product": "Добавить продукт",
+        "maintain-products": "Управление продуктами",
+        "admin": "K представлению администратора",
+        "shops": "Наши магазины",
+        "contact": "Связаться с нами",
+        "cart": "Корзина",
+    }
+  },
 };
 
 i18n
