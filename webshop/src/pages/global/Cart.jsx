@@ -8,26 +8,29 @@ function Cart() {
     setCart([]);
   };
 
-  const removeFromCart = (itemToRemove) => {
-    const updatedCart = cart.filter((item) => item.id !== itemToRemove.id);
-    setCart(updatedCart);
+  const removeFromCart = (index) => {
+    // const updatedCart = cart.filter((item) => item.id !== itemToRemove.id);
+    cart.splice(index,1);
+    setCart(cart.slice);
   };
 
   const calculateCartSum = () => {
-    const sum = cart.reduce((total, item) => total + item.price, 0);
-    return sum.toFixed(2); // Display total with 2 decimal places
+    // const sum = cart.reduce((total, item) => total + item.price, 0);
+    let sum = 0;
+    cart.forEach(item => sum = sum + item.price);
+    return sum.toFixed(2);
   };
 
   return (
     <div>
       <h2>Cart</h2>
       {/* Display items in cart */}
-      {cart.map((cartItem) => (
+      {cart.map((cartItem, index) => (
         <div key={cartItem.id}>
           <p>{cartItem.name}</p>
           <p>{cartItem.description}</p>
           <p>{cartItem.price}</p>
-          <button onClick={() => removeFromCart(cartItem)}>Remove</button>
+          <button onClick={() => removeFromCart(index)}>Remove</button>
         </div>
       ))}
 

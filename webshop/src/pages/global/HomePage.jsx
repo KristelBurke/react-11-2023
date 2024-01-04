@@ -1,29 +1,34 @@
 import React, { useState} from 'react'
-import productsFromFile from "../../data/products.json"
+import productsFromFile from "../../data/products.json";
+import cartFromFile from "../../data/cart.json"
 
 function HomePage() {
   const [products, setProducts] = useState(productsFromFile);
-  const [cart, setCart] = useState([]);
 
   const addToCart = (clickedProduct) => {
-    setCart([...cart, clickedProduct]);
+    cartFromFile.push(clickedProduct);
   }
 
   const sortAZ = () => {
-    const sortedProducts = [...products].sort((a, b) => a.name.localeCompare(b.name));
-    setProducts(sortedProducts);
+    products.sort((a, b) => a.name.localeCompare(b.name));
+    setProducts(products.slice());
   }
+
   const sortZA = () => {
-    const sortedProducts = [...products].sort((a, b) => b.name.localeCompare(a.name));
-    setProducts(sortedProducts);
+    products.sort((a, b) => b.name.localeCompare(a.name));
+    setProducts(products.slice());
+    // setProducts([...products]);
   }
   const sortPriceAsc = () => {
-    const sortedProducts = [...products].sort((a, b) => a.price - b.price);
-    setProducts(sortedProducts);
+    // const sortedProducts = [...products].sort((a, b) => a.price - b.price);
+    // setProducts(sortedProducts);
+    products.sort((a, b) => a.price - b.price);
+    setProducts(products.slice());
   }
+  
   const sortPriceDesc = () => {
-    const sortedProducts = [...products].sort((a, b) => b.price - a.price);
-    setProducts(sortedProducts);
+    products.sort((a, b) => b.price - a.price);
+    setProducts(products.slice());
   }
 
   return (

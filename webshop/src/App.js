@@ -64,13 +64,13 @@ function App() {
         <Route path='contact' element={ <ContactUs /> } /> 
         <Route path='shops' element={ <Shops /> } /> 
         <Route path='product' element={ <SingleProduct /> } /> 
-        <Route path='*' element={ <NotFound /> } />
         <Route path='admin' element={ <AdminHome /> } />
         <Route path='admin/add' element={ <AddProduct /> } />
-        <Route path='admin/edit' element={ <EditProduct /> } />
+        <Route path='admin/edit/:product_id' element={ <EditProduct /> } />
         <Route path='admin/products' element={ <MaintainProducts /> } />
         <Route path='admin/categories' element={ <MaintainCategories /> } />
         <Route path='admin/shops' element={ <MaintainShops /> } />
+        <Route path='*' element={ <NotFound /> } />
       </Routes>   
     </div>
   );
