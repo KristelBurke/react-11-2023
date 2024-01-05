@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import cartFromFile from '../../data/cart.json';
 
 function Cart() {
@@ -6,12 +7,14 @@ function Cart() {
 
   const emptyCart = () => {
     setCart([]);
+    toast.success("Cart is empty");
   };
 
   const removeFromCart = (index) => {
     // const updatedCart = cart.filter((item) => item.id !== itemToRemove.id);
     cart.splice(index,1);
     setCart(cart.slice);
+    toast.success("Item removed");
   };
 
   const calculateCartSum = () => {
@@ -35,10 +38,8 @@ function Cart() {
         </div>
       ))}
       <br />
-      {/* Show cart total */}
       <p>Total: ${calculateCartSum()}</p>
 
-      {/* Button to empty cart */}
       <button onClick={emptyCart}>Empty Cart</button>
     </div>
   );

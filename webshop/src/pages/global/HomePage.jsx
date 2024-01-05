@@ -1,12 +1,14 @@
-import React, { useState} from 'react'
+import React, { useState} from 'react';
+import { toast } from 'react-toastify';
 import productsFromFile from "../../data/products.json";
-import cartFromFile from "../../data/cart.json"
+import cartFromFile from "../../data/cart.json";
 
 function HomePage() {
   const [products, setProducts] = useState(productsFromFile);
 
   const addToCart = (clickedProduct) => {
     cartFromFile.push(clickedProduct);
+    toast.success("Item added to cart");
   }
 
   const sortAZ = () => {
@@ -49,12 +51,12 @@ function HomePage() {
             <div> {product.category} </div>
             <div> {product.active} </div>
             <button onClick={() => addToCart(product)}>Add to cart</button>
-
             <br />
             <br />
           </div>
           )}
       </div>
+
     </div>
   )
 }

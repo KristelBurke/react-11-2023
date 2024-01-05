@@ -1,5 +1,6 @@
 import './App.css';
 import { Link, Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import AdminHome from './pages/admin/AdminHome';
 import AddProduct from './pages/admin/AddProduct';
 import EditProduct from './pages/admin/EditProduct';
@@ -71,7 +72,13 @@ function App() {
         <Route path='admin/categories' element={ <MaintainCategories /> } />
         <Route path='admin/shops' element={ <MaintainShops /> } />
         <Route path='*' element={ <NotFound /> } />
-      </Routes>   
+      </Routes>
+
+
+      <ToastContainer
+       position="top-right"
+       theme="dark"/>
+
     </div>
   );
 }
