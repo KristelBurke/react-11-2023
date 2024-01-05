@@ -28,12 +28,13 @@ function Cart() {
       {cart.map((cartItem, index) => (
         <div key={cartItem.id}>
           <p>{cartItem.name}</p>
+          <p>{cartItem.image}</p>
           <p>{cartItem.description}</p>
           <p>{cartItem.price}</p>
           <button onClick={() => removeFromCart(index)}>Remove</button>
         </div>
       ))}
-
+      <br />
       {/* Show cart total */}
       <p>Total: ${calculateCartSum()}</p>
 
