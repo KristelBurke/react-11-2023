@@ -9,9 +9,10 @@ function MaintainProduct() {
     setProducts([]); 
   };
 
-  // const deleteProduct = () => {
-    
-  // };
+ const deleteProduct = (i) => {
+  products.splice(i,1);
+  setProducts(products.slice());
+ };
 
   return (
     <div>
@@ -24,7 +25,7 @@ function MaintainProduct() {
             <div> {product.description} </div>
             <div> {product.category} </div>
             <div> {product.active} </div>
-            <button>x</button>
+            <button onClick={deleteProduct}>Kustuta</button>
             <Link to={"/admin/edit/" + product.id}>
               <button>Muuda</button>
             </Link>
