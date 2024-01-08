@@ -9,7 +9,7 @@ const resources = {
     translation: {
         "maintain-categories": "Maintain categories",
         "maintain-shops": "Maintain shops",
-        "add-product": "Add products",
+        "add-products": "Add products",
         "maintain-products": "Maintain products",
         "admin": "To admin view",
         "shops": "Our shops",
@@ -22,7 +22,7 @@ const resources = {
     translation: {
         "maintain-categories": "Halda kategooriaid",
         "maintain-shops": "Halda poode",
-        "add-product": "Lisa toode",
+        "add-products": "Lisa toode",
         "maintain-products": "Halda tooteid",
         "admin": "Admin vaatesse",
         "shops": "Meie poed",
@@ -35,7 +35,7 @@ const resources = {
     translation: {
         "maintain-categories": "Säilytä luokkia",
         "maintain-shops": "Ylläpidä kauppoja",
-        "add-product": "Lisää tuote",
+        "add-products": "Lisää tuote",
         "maintain-products": "Ylläpidä tuotteita",
         "admin": "Järjestelmänvalvojanäkymään",
         "shops": "Meidän kaupat",
@@ -48,7 +48,7 @@ const resources = {
     translation: {
         "maintain-categories": "Управление категориями",
         "maintain-shops": "Управление магазинами",
-        "add-product": "Добавить продукт",
+        "add-products": "Добавить продукт",
         "maintain-products": "Управление продуктами",
         "admin": "K представлению администратора",
         "shops": "Наши магазины",
