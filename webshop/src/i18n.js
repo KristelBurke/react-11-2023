@@ -9,7 +9,7 @@ const resources = {
     translation: {
         "maintain-categories": "Maintain categories",
         "maintain-shops": "Maintain shops",
-        "add-product": "Add product",
+        "add-product": "Add products",
         "maintain-products": "Maintain products",
         "admin": "To admin view",
         "shops": "Our shops",

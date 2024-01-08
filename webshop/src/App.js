@@ -1,12 +1,12 @@
 import './App.css';
 import { Link, Route, Routes } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
 import AdminHome from './pages/admin/AdminHome';
 import AddProduct from './pages/admin/AddProduct';
 import EditProduct from './pages/admin/EditProduct';
 import MaintainProducts from './pages/admin/MaintainProducts';
 import MaintainCategories from './pages/admin/MaintainCategories';
 import MaintainShops from './pages/admin/MaintainShops';
+import Supplier from './pages/admin/Supplier';
 import HomePage from './pages/global/HomePage';
 import Cart from './pages/global/Cart';
 import ContactUs from './pages/global/ContactUs';
@@ -71,14 +71,9 @@ function App() {
         <Route path='admin/products' element={ <MaintainProducts /> } />
         <Route path='admin/categories' element={ <MaintainCategories /> } />
         <Route path='admin/shops' element={ <MaintainShops /> } />
+        <Route path='admin/supplier' element={ <Supplier /> } />
         <Route path='*' element={ <NotFound /> } />
       </Routes>
-
-
-      <ToastContainer
-       position="top-right"
-       theme="dark"/>
-
     </div>
   );
 }

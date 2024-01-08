@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import productsFromFile from "../../data/products.json";
+import "../../css/MaintainProducts.css";
 
 function MaintainProduct() {
   const [products, setProducts] = useState(productsFromFile);
 
-  const emptyProducts = () => {
-    setProducts([]); 
-  };
+  // const emptyProducts = () => {
+  //   setProducts([]); 
+  // };
 
  const deleteProduct = (i) => {
   products.splice(i,1);
@@ -16,23 +17,39 @@ function MaintainProduct() {
 
   return (
     <div>
-      <button onClick={emptyProducts}>Delete</button>
-      {products.map(product => 
-          <div key={product.id}>
-            <img src={product.image} alt="" />
-            <div> {product.name} </div>
-            <div> {product.price} </div>
-            <div> {product.description} </div>
-            <div> {product.category} </div>
-            <div> {product.active} </div>
-            <button onClick={deleteProduct}>Kustuta</button>
+      {/* <button onClick={emptyProducts}>Delete</button> */}
+      <table>
+        <thead>
+          <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Actions</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        {products.map((product, index )=> 
+          <tr key={product.id}>
+            <td>
+              <img className="image" src={product.image} alt="" />
+            </td>
+            <td> {product.name} </td>
+            <td> {product.price} </td>
+            <td> {product.description} </td>
+            <td> {product.category} </td>
+            <td>
+            <button onClick={() => deleteProduct(index)}>x</button>
             <Link to={"/admin/edit/" + product.id}>
               <button>Muuda</button>
             </Link>
-            <br />
-            <br />
-          </div>
+            </td>
+          </tr>
           )}
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
-import cartFromFile from '../../data/cart.json';
+import { toast, ToastContainer } from 'react-toastify';
+// import cartFromFile from '../../data/cart.json';
+import styles from "../../css/Cart.module.css"
 
 function Cart() {
-  const [cart, setCart] = useState(cartFromFile);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
   const emptyCart = () => {
     setCart([]);
+    localStorage.setItem('cart', JSON.stringify ([]));
     toast.success("Cart is empty");
+    
   };
 
   const removeFromCart = (index) => {
     // const updatedCart = cart.filter((item) => item.id !== itemToRemove.id);
     cart.splice(index,1);
-    setCart(cart.slice);
+    setCart(cart.slice());
+    localStorage.setItem('cart', JSON.stringify (cart));
     toast.success("Item removed");
   };
 
@@ -29,18 +33,28 @@ function Cart() {
       <h2>Cart</h2>
       {/* Display items in cart */}
       {cart.map((cartItem, index) => (
-        <div key={cartItem.id}>
-          <p>{cartItem.name}</p>
-          <p>{cartItem.image}</p>
-          <p>{cartItem.description}</p>
-          <p>{cartItem.price}</p>
-          <button onClick={() => removeFromCart(index)}>Remove</button>
+        <div key={cartItem.id} className={styles.product}>
+        <img className={styles.image} src={cartItem.image} alt="" />
+        <div className={styles.name}>{cartItem.name}</div>
+        <div className={styles.price}>{cartItem.price}</div>
+        <div className={styles.quantity}>
+          <img className={styles.button} src = "/minus.png"/>
+          <div>7 pcs</div>
+          <img className={styles.button} src = "/plus.png"/>
         </div>
+        
+        <div className={styles.total}>hind*kogus€</div>
+        <img className={styles.button} src="/remove.png" onClick={() => removeFromCart(index)} alt=""/>
+      </div>
       ))}
       <br />
       <p>Total: ${calculateCartSum()}</p>
 
       <button onClick={emptyCart}>Empty Cart</button>
+
+      <ToastContainer
+       position="top-right"
+       theme="dark"/>
     </div>
   );
 }
