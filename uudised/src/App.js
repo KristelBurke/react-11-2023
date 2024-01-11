@@ -31,7 +31,7 @@ function App() {
          <button>Lisa uudis</button>
        </Link>
 
-       <Link to="/halda-uudiseid">
+       <Link to="/halda">
          <button>Halda uudiseid</button>
        </Link>
 
@@ -42,7 +42,7 @@ function App() {
         <Route path="kontakt" element={ <Kontakt /> } />
         <Route path="meist" element={ <Meist /> } />
         <Route path="lisa-uudis" element={ <LisaUudis/> } />
-        <Route path="halda-uudiseid" element={ <HaldaUudiseid /> } />
+        <Route path="halda" element={ <HaldaUudiseid /> } />
        </Routes>
     </div>
   );
