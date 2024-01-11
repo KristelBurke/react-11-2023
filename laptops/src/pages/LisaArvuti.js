@@ -1,12 +1,23 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 
 function LisaArvuti() {
     const [message, setMessage] = useState("Lisa arvuti!");
-    const [naitaNuppu, uuendaNaitaNuppu] = useState(true);
+    const markRef =useRef();
+    const mudelRef =useRef();
+    const maksumusRef =useRef();
+    // const [naitaNuppu, uuendaNaitaNuppu] = useState(true);
     
     function addProduct(){
         setMessage("Arvuti lisatud!");
-        uuendaNaitaNuppu(false);
+        // uuendaNaitaNuppu(false);
+        const newComputer = {
+            "mark": markRef.current.value,
+            "mudel": mudelRef.current.value,
+            "maksumus": maksumusRef.current.value,
+        }
+        const computers = JSON.parse(localStorage.getItem("laptops")) || [];
+        computers.push(newComputer);
+        localStorage.setItem("laptops", JSON.stringify(computers));
     }
 
     return (
@@ -14,18 +25,15 @@ function LisaArvuti() {
             <div>Sonum: {message}</div>
 
             <label>Mark</label>
-            <input type="text"/>  
+            <input ref={markRef} type="text"/>  
             <br/>
-
             <label>Mudel</label>
-            <input type="text"/>  
+            <input ref={mudelRef} type="text"/>  
             <br/>
-
             <label>Maksumus</label>
-            <input type="text"/>  
+            <input ref={maksumusRef} type="text"/>  
             <br/>
-
-            { naitaNuppu === true && <button onClick={() => addProduct()}>Sisesta</button>}
+            { message === "Lisa arvuti!" && <button onClick={() => addProduct()}>Sisesta</button>}
 
         </div>
     )
