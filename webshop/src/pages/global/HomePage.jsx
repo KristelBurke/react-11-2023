@@ -65,7 +65,7 @@ function HomePage() {
       </div>
 
       <ToastContainer
-       position="top-right"
+       position="bottom-right"
        theme="dark"/>
 
     </div>

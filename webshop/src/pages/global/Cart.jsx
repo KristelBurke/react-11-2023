@@ -38,9 +38,9 @@ function Cart() {
         <div className={styles.name}>{cartItem.name}</div>
         <div className={styles.price}>{cartItem.price}</div>
         <div className={styles.quantity}>
-          <img className={styles.button} src = "/minus.png"/>
+          <img className={styles.button} src = "/minus.png" alt="" />
           <div>7 pcs</div>
-          <img className={styles.button} src = "/plus.png"/>
+          <img className={styles.button} src = "/plus.png"alt="" />
         </div>
         
         <div className={styles.total}>hind*kogus€</div>
@@ -53,7 +53,7 @@ function Cart() {
       <button onClick={emptyCart}>Empty Cart</button>
 
       <ToastContainer
-       position="top-right"
+       position="bottom-right"
        theme="dark"/>
     </div>
   );

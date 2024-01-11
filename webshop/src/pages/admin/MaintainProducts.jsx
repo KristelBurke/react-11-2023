@@ -27,7 +27,6 @@ function MaintainProduct() {
           <th>Description</th>
           <th>Category</th>
           <th>Actions</th>
-            
           </tr>
         </thead>
         <tbody>
