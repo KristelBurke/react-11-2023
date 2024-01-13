@@ -13,17 +13,17 @@ function App() {
       </Link>
 
       <Link to="/lisa-tegelane">
-        <button>Avalehele</button>
+        <button>Lisa tegelane</button>
       </Link>
 
       <Link to="/valitud-tegelased">
-      <button>Avalehele</button>
+      <button>Valitud tegelased</button>
       </Link>
 
       <Routes>
         <Route path="/" element={<Avaleht/>}/>
-        <Route path="/lisa-tegelane" element={<Avaleht/>}/>
-        <Route path="/valitud-tegelased" element={<Avaleht/>}/>
+        <Route path="/lisa-tegelane" element={<LisaTegelane/>}/>
+        <Route path="/valitud-tegelased" element={<ValitudTegelased/>}/>
       </Routes>
       
     </div>
