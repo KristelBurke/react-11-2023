@@ -13,3 +13,13 @@ th {
 /* td {
     background-color: rgb(241, 202, 208);
 } */
+
+.active {
+    border: 1px solid green;
+    background-color: rgb(211, 242, 211);
+  }
+  
+  .notactive {
+    border: 1px solid red;
+    background-color: rgb(235, 201, 201);
+  }

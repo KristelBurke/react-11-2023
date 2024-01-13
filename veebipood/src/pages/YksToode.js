@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import tootedFailist from '../data/tooted.json'
+import tootedFailist from '../data/tooted.json';
 
 
 function YksToode() {

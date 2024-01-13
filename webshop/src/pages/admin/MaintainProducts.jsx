@@ -30,8 +30,9 @@ function MaintainProduct() {
           </tr>
         </thead>
         <tbody>
-        {products.map((product, index )=> 
-          <tr key={product.id}>
+        {products.map((product, index )=>
+
+          <tr className={product.active === true ? "active" : "notactive"} key={product.id}>
             <td>
               <img className="image" src={product.image} alt="" />
             </td>
