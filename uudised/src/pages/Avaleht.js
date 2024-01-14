@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 function Avaleht() {
     const [postitused, uuendaPostitused] = useState([]);
@@ -19,6 +20,9 @@ function Avaleht() {
                 <div><u>{element.id}</u></div>
                 <div><b>{element.title}</b></div>
                 <div>{element.body}</div>
+                <Link to={"kasutaja-postitus/" + element.userId}>
+                    <button>Koik kasutaja postitused</button>
+                </Link>
             </div>
             
             )}
