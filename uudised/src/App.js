@@ -12,7 +12,7 @@ import MuudaUudis from './pages/MuudaUudis';
 
 function App() {
   return (
-    <div >
+    <div className='App' >
       <Link to="/">
          <button>Avalehele</button>
        </Link>
