@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "kristel-veebipood",
     "public": "build",
     "ignore": [
       "firebase.json",

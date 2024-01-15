@@ -54,10 +54,10 @@ function HomePage() {
       <div className="products">
         {products.map(product => 
           <div key={product.id} className="product"> 
-            <img className="image" src={product.image} alt="" />
+            <img className={product.active === true ? "image" : "image-not-active"} src={product.image} alt="" />
             <div> {product.name} </div>
             <div> {product.price} </div>
-            <button onClick={() => addToCart(product)}>Add to cart</button>
+            <button disabled={product.active === false} onClick={() => addToCart(product)}>Add to cart</button>
             <br />
             <br />
           </div>
