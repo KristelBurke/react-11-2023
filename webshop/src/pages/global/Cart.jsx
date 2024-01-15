@@ -21,10 +21,25 @@ function Cart() {
     toast.success("Item removed");
   };
 
+  const decreaseQuantity = (index) => {
+    cart[index].kogus = cart[index].kogus -1 ;
+    if (cart[index].kogus === 0 ){
+      cart.splice(index,1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart.slice());
+  }
+
+  const increaseQuantity = (index) => {
+    cart[index].kogus = cart[index].kogus + 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart.slice());
+  }
+
   const calculateCartSum = () => {
     // const sum = cart.reduce((total, item) => total + item.price, 0);
     let sum = 0;
-    cart.forEach(item => sum = sum + item.price);
+    cart.forEach(item => sum = sum + item.toode.price * item.kogus);
     return sum.toFixed(2);
   };
 
@@ -34,21 +49,21 @@ function Cart() {
       {/* Display items in cart */}
       {cart.map((cartItem, index) => (
         <div key={cartItem.id} className={styles.product}>
-        <img className={styles.image} src={cartItem.image} alt="" />
-        <div className={styles.name}>{cartItem.name}</div>
-        <div className={styles.price}>{cartItem.price}</div>
+        <img className={styles.image} src={cartItem.toode.image} alt="" />
+        <div className={styles.name}>{cartItem.toode.name}</div>
+        <div className={styles.price}>{cartItem.toode.price.toFixed(2)}</div>
         <div className={styles.quantity}>
-          <img className={styles.button} src = "/minus.png" alt="" />
-          <div>7 pcs</div>
-          <img className={styles.button} src = "/plus.png"alt="" />
+          <img className={styles.button} onClick={() => decreaseQuantity(index) } src = "/minus.png" alt="" />
+            <div>{cartItem.kogus}</div>
+          <img className={styles.button} onClick={() => increaseQuantity(index) }src = "/plus.png"alt="" />
         </div>
         
-        <div className={styles.total}>hind*kogus€</div>
+        <div className={styles.total}>{(cartItem.toode.price * cartItem.kogus).toFixed(2)}€</div>
         <img className={styles.button} src="/remove.png" onClick={() => removeFromCart(index)} alt=""/>
       </div>
       ))}
       <br />
-      <p>Total: ${calculateCartSum()}</p>
+      <p>Total: €{calculateCartSum()}</p>
 
       <button onClick={emptyCart}>Empty Cart</button>
 

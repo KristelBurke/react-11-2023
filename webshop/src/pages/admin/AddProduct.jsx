@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import productsFromFile from "../../data/products.json";
 
 function AddProduct() {
@@ -10,6 +10,13 @@ function AddProduct() {
   const categoryRef = useRef();
   const descriptionRef = useRef();
   const activeRef = useRef();
+
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    fetch(process.env.REACT_APP_DB_URL_CATEGORIES)
+    .then(res => res.json())
+    .then(json => setCategories(json || []))
+  }, []);
 
     function add() {
       if (nameRef.current.value === "") {
@@ -42,7 +49,10 @@ function AddProduct() {
       <label>Image </label><br />
       <input ref={imageRef} type="text"  /> <br /><br />
       <label>Category </label><br />
-      <input ref={categoryRef} type="text" /> <br /><br />
+      {/* <input ref={categoryRef} type="text" /> <br /><br /> */}
+        <select ref={categoryRef} name="" id="">
+          {categories.map(category => <option key={category.name}>{category.name}</option>)}
+        </select><br />
       <label>Description </label><br />
       <input ref={descriptionRef} type="text" /> <br /><br />
       <label>Active </label><br />

@@ -9,7 +9,12 @@ function HomePage() {
 
   const addToCart = (clickedProduct) => {
     const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
-    cartLS.push(clickedProduct);
+    const index = cartLS.findIndex(product => product.toode.id === clickedProduct.id);
+    if (index >= 0) {
+      cartLS[index].kogus = cartLS[index].kogus + 1;
+    } else {
+      cartLS.push({"kogus": 1, "toode": clickedProduct});
+    }
     toast.success("Item added to cart");
     localStorage.setItem('cart', JSON.stringify (cartLS));
   }
