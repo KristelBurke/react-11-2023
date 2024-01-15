@@ -13,7 +13,7 @@ function KasutajaPostitus() {
                 const result = data.filter(element => element.userId === Number(kasutajaId));
                 uuendaPostitused(result);
             })
-       }, []);
+       }, [kasutajaId]);
 
   return (
     <div>
