@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 // import cartFromFile from '../../data/cart.json';
 import styles from "../../css/Cart.module.css"
+import ParcelMachines from '../../components/ParcelMachines';
 
 function Cart() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
@@ -63,9 +64,11 @@ function Cart() {
       </div>
       ))}
       <br />
-      <p>Total: €{calculateCartSum()}</p>
+      <p>Total: €{calculateCartSum()}</p><br />
+     
+      <button onClick={emptyCart}>Empty Cart</button><br /><br />
 
-      <button onClick={emptyCart}>Empty Cart</button>
+      <ParcelMachines />
 
       <ToastContainer
        position="bottom-right"

@@ -2,9 +2,9 @@ import {useRef, useState} from 'react';
 
 function LisaArvuti() {
     const [message, setMessage] = useState("Lisa arvuti!");
-    const markRef =useRef();
-    const mudelRef =useRef();
-    const maksumusRef =useRef();
+    const markRef = useRef();
+    const mudelRef = useRef();
+    const maksumusRef = useRef();
     // const [naitaNuppu, uuendaNaitaNuppu] = useState(true);
     
     function addProduct(){

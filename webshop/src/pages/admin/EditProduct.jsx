@@ -1,12 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import productsFromFile from "../../data/products.json";
+// import productsFromFile from "../../data/products.json";
 
 function EditProduct() {
   const { product_id } = useParams();
+  const [products, setProducts] = useState([]);
   // const leitud = tootedFailist[index];
   //                22676756 === "22676756" --> Number
-  const found = productsFromFile.find(product => product.id === Number(product_id));
+  const found = products.find(product => product.id === Number(product_id));
   const idRef = useRef();
   const nameRef = useRef();
   const priceRef = useRef();
@@ -16,6 +17,12 @@ function EditProduct() {
   const activeRef = useRef();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    fetch(process.env.REACT_APP_DB_URL_PRODUCTS)
+    .then(res => res.json())
+    .then(json => setProducts(json || []))
+  }, []);
+
   //   0    1    2    3
   // [{1}, {2}, {3}, {4}]
   // .find() ---> {3}
@@ -23,8 +30,8 @@ function EditProduct() {
   // .filter() ---> [{3}]
 
   const edit = () => {
-    const index = productsFromFile.findIndex(product => product.id === Number(product_id));
-    productsFromFile[index] = {
+    const index = products.findIndex(product => product.id === Number(product_id));
+    products[index] = {
         "id": Number(idRef.current.value),
         "image": imageRef.current.value,
         "name": nameRef.current.value,
@@ -33,7 +40,8 @@ function EditProduct() {
         "category": categoryRef.current.value,
         "active": activeRef.current.checked
     }
-    navigate("/admin/products");
+    fetch(process.env.REACT_APP_DB_URL_PRODUCTS, { "method": 'PUT', "body" : JSON.stringify(products)})
+    .then(() => navigate("/admin/products"));
   }
 
   if (found === undefined) {

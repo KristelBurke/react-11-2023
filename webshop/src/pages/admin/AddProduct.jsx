@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import productsFromFile from "../../data/products.json";
+// import productsFromFile from "../../data/products.json";
 
 function AddProduct() {
   const [message, setMessage] = useState("Add new product");
@@ -10,13 +10,22 @@ function AddProduct() {
   const categoryRef = useRef();
   const descriptionRef = useRef();
   const activeRef = useRef();
-
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(process.env.REACT_APP_DB_URL_PRODUCTS)
+    .then(res => res.json())
+    .then(json => setProducts(json || []))
+  }, []);
+
   useEffect(() => {
     fetch(process.env.REACT_APP_DB_URL_CATEGORIES)
     .then(res => res.json())
     .then(json => setCategories(json || []))
   }, []);
+
+  
 
     function add() {
       if (nameRef.current.value === "") {
@@ -33,7 +42,9 @@ function AddProduct() {
             "category": categoryRef.current.value,
             "active": activeRef.current.checked
       }
-          productsFromFile.push(newProduct);
+          products.push(newProduct);
+          fetch(process.env.REACT_APP_DB_URL_PRODUCTS, { "method": 'PUT', "body" : JSON.stringify(products)})
+          
       }    
   }
 

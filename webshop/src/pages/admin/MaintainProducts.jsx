@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import productsFromFile from "../../data/products.json";
+// import productsFromFile from "../../data/products.json";
 import "../../css/MaintainProducts.css";
+import { Spinner } from 'react-bootstrap'
 
 function MaintainProduct() {
-  const [products, setProducts] = useState(productsFromFile);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(process.env.REACT_APP_DB_URL_PRODUCTS)
+    .then(res => res.json())
+    .then(json => setProducts(json || []))
+  }, []);
 
   // const emptyProducts = () => {
   //   setProducts([]); 
@@ -13,7 +20,12 @@ function MaintainProduct() {
  const deleteProduct = (i) => {
   products.splice(i,1);
   setProducts(products.slice());
+  fetch(process.env.REACT_APP_DB_URL_PRODUCTS, { "method": 'PUT', "body" : JSON.stringify(products)})
  };
+
+ if (products.length === 0 ) {
+  return <Spinner />
+ }
 
   return (
     <div>
