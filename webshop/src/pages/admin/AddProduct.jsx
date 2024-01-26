@@ -10,6 +10,7 @@ function AddProduct() {
   const categoryRef = useRef();
   const descriptionRef = useRef();
   const activeRef = useRef();
+  
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
 
