@@ -1,18 +1,20 @@
 import React, { useRef, useState, useEffect } from 'react';
 // import productsFromFile from "../../data/products.json";
+import FileUpload from '../../components/FileUpload.jsx';
 
 function AddProduct() {
   const [message, setMessage] = useState("Add new product");
   const idRef = useRef();
   const nameRef = useRef();
   const priceRef = useRef();
-  const imageRef = useRef();
+  // const imageRef = useRef();
   const categoryRef = useRef();
   const descriptionRef = useRef();
   const activeRef = useRef();
   
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [imageUrl, setImage] = useState("");
 
   useEffect(() => {
     fetch(process.env.REACT_APP_DB_URL_PRODUCTS)
@@ -36,7 +38,8 @@ function AddProduct() {
           setMessage("Item successfully added");
           const newProduct = {
             "id": Number(idRef.current.value),
-            "image": imageRef.current.value,
+            "image": imageUrl,
+            // "image": imageRef.current.value,
             "name": nameRef.current.value,
             "price": Number(priceRef.current.value),
             "description": descriptionRef.current.value,
@@ -59,7 +62,8 @@ function AddProduct() {
       <label>Price </label><br />
       <input ref={priceRef} type="number" /> <br /><br />
       <label>Image </label><br />
-      <input ref={imageRef} type="text"  /> <br /><br />
+      {/* <input ref={imageRef} type="text"  /> <br /><br /> */}
+      <FileUpload onSendPictureUrl={setImage} />
       <label>Category </label><br />
       {/* <input ref={categoryRef} type="text" /> <br /><br /> */}
         <select ref={categoryRef} name="" id="">
